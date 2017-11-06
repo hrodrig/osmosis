@@ -24,6 +24,9 @@
 # SOFTWARE.
 #
 # -----------------------------------------------------------------------------
-class ApplicationRecord < ActiveRecord::Base
-  self.abstract_class = true
+class Setting < RailsSettings::Base
+  # ---------------------------------------------------------------------------
+  source Rails.root.join("config/app.yml")
+  namespace Rails.env
+  # ---------------------------------------------------------------------------
 end
